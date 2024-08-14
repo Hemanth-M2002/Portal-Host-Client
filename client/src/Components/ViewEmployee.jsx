@@ -97,7 +97,7 @@ export default function ViewEmployee() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/view");
+        const response = await axios.get("https://ems-port-api.onrender.com/view");
         setDataList(response.data.data);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -114,7 +114,7 @@ export default function ViewEmployee() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/delete/${id}`);
+      await axios.delete(`https://ems-port-api.onrender.com/delete/${id}`);
       setDataList(prevData => prevData.filter(item => item._id !== id)); // Update state to remove deleted item
       alert("Employee deleted Successfully :)");
     } catch (error) {

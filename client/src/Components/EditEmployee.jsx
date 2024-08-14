@@ -72,7 +72,7 @@ export default function EditEmployee() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/view/${id}`)
+    axios.get(`https://ems-port-api.onrender.com/view/${id}`)
       .then((res) => {
         setInputs(res.data.data);
       })
@@ -127,7 +127,7 @@ export default function EditEmployee() {
           image: imageUrl || inputs.image,
         };
 
-        return axios.put(`http://localhost:4000/edit/${id}`, updatedData);
+        return axios.put(`https://ems-port-api.onrender.com/edit/${id}`, updatedData);
       })
       .then(() => {
         alert("Employee data edited successfully");

@@ -70,7 +70,7 @@ const CreateEmployee = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/view');
+        const response = await axios.get('https://ems-port-api.onrender.com/view');
         setEmployees(response.data.data);
       } catch (error) {
         console.error('Error fetching employee data:', error);
@@ -124,7 +124,7 @@ const CreateEmployee = () => {
 
   const checkForDuplicates = async (newEmployee) => {
     try {
-      const response = await axios.get('http://localhost:4000/view');
+      const response = await axios.get('https://ems-port-api.onrender.com/view');
       const existingEmployees = response.data.data;
 
       return existingEmployees.some(emp =>
@@ -159,7 +159,7 @@ const CreateEmployee = () => {
         return;
       }
 
-      await axios.post('http://localhost:4000/create', employeeData, {
+      await axios.post('https://ems-port-api.onrender.com/create', employeeData, {
         headers: {
           'Content-Type': 'application/json'
         }
